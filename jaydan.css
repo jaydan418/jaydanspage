@@ -1,0 +1,52 @@
+h1{
+    text-align: center ;
+    font-size: 60px; 
+   }
+   
+     h2{
+    text-align: center; 
+    font-size: 50px;
+   }
+   
+     p{
+    text-align: center ; 
+    font-size: 40px;
+   }
+   
+   a {
+    padding: 1px 500px;
+    font-size: 40px;
+   }
+   
+   img{
+    width: 200px;
+    padding: 5px 650px;
+  }
+
+  body{
+    background-color: green;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: 80px;
+    }
+
+    h1 {
+      font-size: 90px;
+    }
+
+    img {
+      width: 500px;
+      padding-left: 270px;
+    }
+
+    h2 {
+      font-size: 85px;
+    }
+
+    a {
+      font-size: 80px;
+    }
+  }
