@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaydans Page | Classic Games</title>
+    <link rel="stylesheet" href="german-game.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="d-flex justify-content-between">
+    <h1 class="text-decoration-underline gone">jaydans Webseite</h1>
+    <ul class="list-unstyled d-flex gap-3 fs-2">
+        <li><a class="bigger" href="https://jaydan418.github.io/jaydanspage/german-home.html">Home</a></li>
+        <li><a class="bigger" href="#">Klassische Spiele</a></li>
+        <li><a class="bigger" href="https://jaydan418.github.io/jaydanspage/german-calculator.html">kalkulator</a></li>
+        <li><a class="bigger" href="https://jaydan418.github.io/jaydanspage/index.html" >Sprache ändern</a></li>
+    </ul>
+  </nav>
+  <section>
+    <h1>1. Game</h1>
+    <h2>Scherre stein papier</h2>
+    <button class="" id="friend" onclick="friend()">spiele gegen freund</button>
+    <button class="" id="ai" onclick="ai()">Spiele gegen ein KI</button>  
+    <script>
+    function friend() {
+    var name1 = prompt("enter player 1 name")
+    var name2 = prompt("enter player 2 name ")  
+    var player1 = prompt( name1 +" enter your choice rock paper or scissors")
+    var player2 = prompt(name2 +" enter your choice rock paper or scissors")
+    const choices = ["rock", "paper", "scissors"];
+    document.write(name1 +" choose "+ player1 + " " + name2 +" choose "+ player2)
+    while (!choices.includes(player2)) {
+        userchoice = prompt("Invalid input. Please enter rock, paper, or scissors");
+      }
+
+      while (!choices.includes(player1)) {
+        userchoice = prompt("Invalid input. Please enter rock, paper, or scissors");
+      }
+
+      if (player1 === "rock" && player2=== "scissors") {
+   document.write(" You win! Rock beats scissors.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (player1 === "paper" && player2 === "rock") {
+   document.write(" You win! paper beats rock.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (player1 === "scissors" && player2 === "paper") {
+   document.write(" You win! scissors beats paper.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (player1 === "scissors" && player2 === "rock") {
+   document.write(" You lost! Rock beats scissors.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (player1 === "rock" && player2 === "paper") {
+   document.write(" You lost! Paper beats rock.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (player1 === "paper" && player2 === "scissors") {
+   document.write(" You lost! Scissors beats paper.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (player1 === player2) {
+   document.write(" It's a tie!");
+   setTimeout(function() { location.reload();}, 5000);
+
+    }
+
+    }
+
+    function ai() {
+      const ainame = ["Mihail", "Maxi"];
+      const name = ainame[Math.floor(Math.random() * 2)];
+      alert("Der Ki name ist " + name)
+      const choices = ["rock", "paper", "scissors"];
+      var userchoice = prompt("enter your choice");
+      var result2 = choices[Math.floor(Math.random() * 3)];
+      while (!choices.includes(userchoice)) {
+        userchoice = prompt("Invalid input. Please enter rock, paper, or scissors");
+      }
+      document.write("you choose " + userchoice + " " + name + "  choose " + result2 );
+
+ if (userchoice === "rock" && result2 === "scissors") {
+   document.write(" You win! Rock beats scissors.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (userchoice === "paper" && result2 === "rock") {
+   document.write(" You win! paper beats rock.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (userchoice === "scissors" && result2 === "paper") {
+   document.write(" You win! scissors beats paper.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (userchoice === "scissors" && result2 === "rock") {
+   document.write(" You lost! Rock beats scissors.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (userchoice === "rock" && result2 === "paper") {
+   document.write(" You lost! Paper beats rock.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (userchoice === "paper" && result2 === "scissors") {
+   document.write(" You lost! Scissors beats paper.");
+   setTimeout(function() { location.reload();}, 5000);
+ }
+ 
+ if (userchoice === result2) {
+   document.write(" It's a tie!");
+   setTimeout(function() { location.reload();}, 5000);
+
+    }
+}
+    </script>
+</section>
+<section>
+<h1>2.Game</h1>
+<h2></h2>
+<button class="" onclick="ai2()">Play vs AI</button>
+<div id="game-board"></div>
+  <p id="word"></p>
+  <p id="chances"></p>
+  <input id="guess" type="text" placeholder="errate einen Buchstaben">
+  <button id="submit-guess">einreichen</button>
+  <button id="reset-game">zurücksetzen</button>
+</div>
+
+<script>
+  let chances; // declare chances as a global variable
+
+  function ai2() {
+    const ainame = ["Mihail", "Maxi"];
+      const name = ainame[Math.floor(Math.random() * 2)];
+      alert("Der Ki name ist " + name)
+    const wordList = ["haus", "auto", "baum", "wasser", "musik", "foto", "computer", "telefon", "bücher", "schule", "stadt", "land", "leute", "arbeit", "familie", "freunde", "hausfrau", "kinder", "spiel", "fussball", "musikinstrument", "gitarre", "klavier", "orchester", "sänger", "lied", "text", "buch", "autor", "leser", "bibliothek", "universität", "student", "professor", "forschung", "wissenschaft", "technik", "ingenieur", "architekt", "kunst", "maler", "bildhauer", "skulptur", "museum", "konzert", "theater", "film", "regisseur", "schauspieler", "rolle", "drehbuch"];
+    chances = 20; // reset chances
+    const word = wordList[Math.floor(Math.random() * wordList.length)];
+    const hiddenWord = Array(word.length).fill("_");
+
+    const wordElement = document.getElementById("word");
+    const chancesElement = document.getElementById("chances");
+    const guessInput = document.getElementById("guess");
+    const submitButton = document.getElementById("submit-guess");
+    const resetButton = document.getElementById("reset-game");
+
+    wordElement.textContent = `Word: ${hiddenWord.join(" ")}`;
+    chancesElement.textContent = `Chances: ${chances}`
+
+    submitButton.addEventListener("click", () => {
+      const guess = guessInput.value;
+      handleGuess(guess);
+      guessInput.value = "";
+    });
+
+    resetButton.addEventListener("click", () => {
+      chances = 10; // reset chances
+      wordElement.textContent = "";
+      chancesElement.textContent = "";
+      guessInput.value = "";
+      ai2(); // call ai2 to start a new game
+    });
+
+    function handleGuess(guess) {
+      if (word.includes(guess)) {
+        for (let i = 0; i < word.length; i++) {
+          if (word[i] === guess) {
+            hiddenWord[i] = guess;
+          }
+        }
+      } else {
+        chances--;
+        if (chances < 0) {
+          chances = 0;
+        }
+      }
+      wordElement.textContent = `Word: ${hiddenWord.join(" ")}`;
+      chancesElement.textContent = `Chances: ${chances}`;
+      if (chances === 0) {
+        alert("Du hast verloren leider!");
+      }
+    }
+  }
+ 
+
+</script>
+</section>
+
+<section>
+<h1>3. Game</h1>
+<h2>Tic Tac Toe</h2>
+<button>spiele gegen KI</button>
+<button onclick="friend2()"><a href="">spiele gegen Freund</a></button>
+</section>
+</body>
+</html>
