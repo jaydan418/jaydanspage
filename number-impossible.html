@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jaydanspage | numbergame</title>
+</head>
+<body>
+    <a href="/jaydanspage/number.html">Go back</a>
+<h1>Guess the Number</h1>
+<input type="number" id="guess" placeholder="Enter your guess">
+<button id="submit">Submit</button>
+<p id="user-guess"></p>
+<p id="number-to-guess"></p>
+    <script>
+// Generate a random number between 1 and 100
+var numberToGuess = Math.floor(Math.random() * 100) + 1;
+
+// Function to check the user's guess
+function checkGuess() {
+  var userGuess = parseInt(document.getElementById("guess").value);
+  
+  // Check if the user's guess is correct
+  if (userGuess === numberToGuess) {
+    alert("Congratulations! You guessed the number correctly.");
+  } else {
+    // If the user's guess is incorrect, reset the number and display a message
+    numberToGuess = Math.floor(Math.random() * 100) + 1;
+    alert("Sorry, that's not correct. The number has been reset. Try again!");
+  }
+  
+  // Update the content of the HTML elements
+  var userGuessElement = document.getElementById("user-guess");
+  var numberToGuessElement = document.getElementById("number-to-guess");
+  userGuessElement.innerHTML = "Your guess: " + userGuess;
+  numberToGuessElement.innerHTML = "Number to guess: " + numberToGuess;
+}
+
+// Add an event listener to the button to call the checkGuess function
+document.getElementById("submit").addEventListener("click", checkGuess);
+    </script>
+</body>
+</html>
