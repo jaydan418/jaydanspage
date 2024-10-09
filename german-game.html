@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaydans Page | Classic Games</title>
+    <link rel="stylesheet" href="german-game.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="d-flex justify-content-between">
+    <h1 class="text-decoration-underline gone">jaydans Webseite</h1>
+    <ul class="list-unstyled d-flex gap-3 fs-2">
+        <li><a class="bigger" href="https://jaydan418.github.io/jaydanspage/german-home.html">Home</a></li>
+        <li><a class="bigger" href="#">Klassische Spiele</a></li>
+        <li><a class="bigger" href="https://jaydan418.github.io/jaydanspage/german-calculator.html">kalkulator</a></li>
+        <li><a class="bigger" href="https://jaydan418.github.io/jaydanspage/index.html" >Sprache ändern</a></li>
+    </ul>
+  </nav>
+  <section>
+    <h1>1. Game</h1>
+    <h2>Scherre stein papier</h2>
+    <button class="" id="friend" onclick="friend()">spiele gegen freund</button>
+    <button class="" id="ai" onclick="ai()">Spiele gegen ein KI</button>  
+    <script>
+   function freund() {
+     var name1 = prompt("Geben Sie den Namen des Spielers 1 ein")
+     var name2 = prompt("Geben Sie den Namen des Spielers 2 ein")
+     var spieler1 = prompt(name1 + " geben Sie Ihre Wahl ein: Stein, Papier oder Schere")
+     var spieler2 = prompt(name2 + " geben Sie Ihre Wahl ein: Stein, Papier oder Schere")
+     const wahlen = ["Stein", "Papier", "Schere"];
+     document.write(name1 + " wählt " + spieler1 + " " + name2 + " wählt " + spieler2)
+     while (!wahlen.includes(spieler2)) {
+       userwahl = prompt("Ungültige Eingabe. Bitte geben Sie Stein, Papier oder Schere ein");
+     }
+     while (!wahlen.includes(spieler1)) {
+       userwahl = prompt("Ungültige Eingabe. Bitte geben Sie Stein, Papier oder Schere ein");
+     }
+     if (spieler1 === "Stein" && spieler2 === "Schere") {
+       document.write(" Sie haben gewonnen! Stein schlägt Schere.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (spieler1 === "Papier" && spieler2 === "Stein") {
+       document.write(" Sie haben gewonnen! Papier schlägt Stein.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (spieler1 === "Schere" && spieler2 === "Papier") {
+       document.write(" Sie haben gewonnen! Schere schlägt Papier.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (spieler1 === "Schere" && spieler2 === "Stein") {
+       document.write(" Sie haben verloren! Stein schlägt Schere.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (spieler1 === "Stein" && spieler2 === "Papier") {
+       document.write(" Sie haben verloren! Papier schlägt Stein.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (spieler1 === "Papier" && spieler2 === "Schere") {
+       document.write(" Sie haben verloren! Schere schlägt Papier.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (spieler1 === spieler2) {
+       document.write(" Es ist ein Unentschieden!");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+   }
+
+   function ki() {
+     const kiname = ["Mihail", "Maxi"];
+     const name = kiname[Math.floor(Math.random() * 2)];
+     alert("Der KI-Name ist " + name)
+     const wahlen = ["Stein", "Papier", "Schere"];
+     var userwahl = prompt("geben Sie Ihre Wahl ein");
+     var result2 = wahlen[Math.floor(Math.random() * 3)];
+     while (!wahlen.includes(userwahl)) {
+       userwahl = prompt("Ungültige Eingabe. Bitte geben Sie Stein, Papier oder Schere ein");
+     }
+     document.write("Sie wählen " + userwahl + " " + name + " wählt " + result2);
+     if (userwahl === "Stein" && result2 === "Schere") {
+       document.write(" Sie haben gewonnen! Stein schlägt Schere.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (userwahl === "Papier" && result2 === "Stein") {
+       document.write(" Sie haben gewonnen! Papier schlägt Stein.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (userwahl === "Schere" && result2 === "Papier") {
+       document.write(" Sie haben gewonnen! Schere schlägt Papier.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (userwahl === "Schere" && result2 === "Stein") {
+       document.write(" Sie haben verloren! Stein schlägt Schere.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (userwahl === "Stein" && result2 === "Papier") {
+       document.write(" Sie haben verloren! Papier schlägt Stein.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (userwahl === "Papier" && result2 === "Schere") {
+       document.write(" Sie haben verloren! Schere schlägt Papier.");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+     if (userwahl === result2) {
+       document.write(" Es ist ein Unentschieden!");
+       setTimeout(function() { location.reload();}, 5000);
+     }
+   }
+    </script>
+</section>
+<section>
+<h1>2.Game</h1>
+<h2></h2>
+<button class="" onclick="ai2()">Spiele gegen Ki</button>
+<div id="game-board"></div>
+  <p id="word"></p>
+  <p id="chances"></p>
+  <input id="guess" type="text" placeholder="errate einen Buchstaben">
+  <button id="submit-guess">einreichen</button>
+  <button id="reset-game">zurücksetzen</button>
+</div>
+
+<script>
+  let chances; // declare chances as a global variable
+
+  function ai2() {
+    const ainame = ["Mihail", "Maxi"];
+      const name = ainame[Math.floor(Math.random() * 2)];
+      alert("Der Ki name ist " + name)
+    const wordList = ["haus", "auto", "baum", "wasser", "musik", "foto", "computer", "telefon", "bücher", "schule", "stadt", "land", "leute", "arbeit", "familie", "freunde", "hausfrau", "kinder", "spiel", "fussball", "musikinstrument", "gitarre", "klavier", "orchester", "sänger", "lied", "text", "buch", "autor", "leser", "bibliothek", "universität", "student", "professor", "forschung", "wissenschaft", "technik", "ingenieur", "architekt", "kunst", "maler", "bildhauer", "skulptur", "museum", "konzert", "theater", "film", "regisseur", "schauspieler", "rolle", "drehbuch"];
+    chances = 20; // reset chances
+    const word = wordList[Math.floor(Math.random() * wordList.length)];
+    const hiddenWord = Array(word.length).fill("_");
+
+    const wordElement = document.getElementById("word");
+    const chancesElement = document.getElementById("chances");
+    const guessInput = document.getElementById("guess");
+    const submitButton = document.getElementById("submit-guess");
+    const resetButton = document.getElementById("reset-game");
+
+    wordElement.textContent = `Word: ${hiddenWord.join(" ")}`;
+    chancesElement.textContent = `Chances: ${chances}`
+
+    submitButton.addEventListener("click", () => {
+      const guess = guessInput.value;
+      handleGuess(guess);
+      guessInput.value = "";
+    });
+
+    resetButton.addEventListener("click", () => {
+      chances = 10; // reset chances
+      wordElement.textContent = "";
+      chancesElement.textContent = "";
+      guessInput.value = "";
+      ai2(); // call ai2 to start a new game
+    });
+
+    function handleGuess(guess) {
+      if (word.includes(guess)) {
+        for (let i = 0; i < word.length; i++) {
+          if (word[i] === guess) {
+            hiddenWord[i] = guess;
+          }
+        }
+      } else {
+        chances--;
+        if (chances < 0) {
+          chances = 0;
+        }
+      }
+      wordElement.textContent = `Word: ${hiddenWord.join(" ")}`;
+      chancesElement.textContent = `Chances: ${chances}`;
+      if (chances === 0) {
+        alert("Du hast leider!");
+      }
+    }
+  }
+ 
+
+</script>
+</section>
+
+<section>
+<h1>3. Game</h1>
+<h2>Knopfen Spiel</h2>
+<button onclick="button()">Starte Spiel</button>
+<script>
+function button() {
+  window.location.href = "https://jaydan418.github.io/jaydanspage/german-button.html";
+}
+</script>
+</section>
+</body>
+</html>
