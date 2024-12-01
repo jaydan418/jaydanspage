@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jaydanspage | Boring Game</title>
+</head>
+<body>
+    <nav>
+   <h1><u>The Boring Game</u></h1>
+   <h2>Press the button and it would send you to a random website</h2> 
+   </nav>
+   <hr>
+   <audio id="lgg">
+    <source src="https://www.myinstants.com/media/sounds/lets-go-gambling_Ci8E7hL.mp3" type="audio/mpeg">
+   </audio>
+   <h1><a href="jaydanspage/home.html">Go Back</a></h1>
+   <button onclick="random()">Press me</button>
+   <script>
+    var lgg = document.getElementById("lgg");
+    function random(){
+   lgg.play();
+   const seven = ""
+   const sixt = "https://jacksonpollock.org/"
+   const fif = "https://trypap.com/"
+   const fourt = "https://drawing.garden/"
+   const thi = "https://binarypiano.com/"
+   const teve = "https://smashthewalls.com/"
+   const elv = "http://www.staggeringbeauty.com/"
+   const ten = "https://sliding.toys/mystic-square/8-puzzle/daily/"
+   const six = "http://corndog.io/"
+   const five = "https://cursoreffects.com/"
+   const four = "https://floatingqrcode.com/"
+   const three = "https://checkbox.toys/scale/"
+   const one = "https://memory.toys/classic/easy/"
+   const two = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+   const web = [one, two, three, four, five, two, two, two, five , four, two , five, fif, fif, six, sixt , six ,ten, seven,seven, seven, seven,fourt,thi,fourt,thi,elv,elv,teve,teve,teve];
+   const randomWeb = web[Math.floor(Math.random() * web.length)];
+   window.open(randomWeb, '_blank');
+    }
+
+    
+   </script>
+   <style>
+    section{
+        display: block;
+    }
+    button{
+        margin-left: 500px;
+        padding: 30px 100px;
+        font-size: 60px;
+    }
+
+    nav {
+        text-align: center;
+    }
+   </style>
+</body>
+</html>
