@@ -11,59 +11,114 @@
   <nav>
   <a href="https://jaydan418.github.io/jaydanspage/home.html">Go back to the homepage</a>
  </nav>
-  
-  <h1 class="u">Entertainment</h1>
-  <div>
-  <button onclick="yt()">Youtube</button>
-  <button onclick="fb()">Facebook</button>
-  <button onclick="ins()">Instagram</button>
-  <button onclick="x()">X (twitter)</button>
-  <button onclick="tk()">Tiktok</button>
-  </div>
-  
-  <h1 class="u">Games</h1>
-  <div>
-  <button onclick="rb()">Roblox</button>
-  <button onclick="pi()">Poki</button>
-  </div>
+ <div id="buttons">
+  <button id="website-btn" onclick="openWebsite()">Open Website</button>
+  <button id="openApp" onclick="openApp()">Open App</button>
+</div>
   <script>
-  function yt() {
-    window.location.href = "https://www.youtube.com/";
-  }
-  function fb() {
-    window.location.href = "https://www.facebook.com/";
-  }
-  function ins() {
-    window.location.href = "https://www.instagram.com/";
-  }
-  function x() {
-    window.location.href = "https://X.com/";
-  }
-  function tk() {
-    window.location.href = "https://www.tiktok.com/";
-  }
 
-  function rb () {
-    window.location.href = "https://www.roblox.com/";
-  }
+    const website = {
+     pages: {
+      youtube: "https://www.youtube.com/",
+      Youtube: "https://www.youtube.com/",
+      facebook: "https://www.facebook.com/",
+      Facebook: "https://www.facebook.com/",
+      instagram: "https://www.instagram.com/",
+      Instagram: "https://www.instagram.com/",
+      x: "https://X.com/",
+      X: "https://X.com/",
+      poki: "https://www.poki.com/",
+      Poki: "https://www.poki.com/",
+      tiktok: "https://www.tiktok.com/",
+      Tiktok: "https://www.tiktok.com/",
+      roblox: "https://www.roblox.com/",
+      Roblox: "https://www.roblox.com/",
+     },
 
-  function pi () {
-    window.location.href = "https://www.poki.com/";
-  }
-  </script>
+     app : {
+      tiktok: "tiktok://",
+      Tiktok: "tiktok://",
+      youtube: "youtube://",
+      Youtube: "youtube://",
+      Instagram: "instagram://",
+      instagram: "instagram://",
+      Facebook: "facebook://",
+      facebook: "facebook://",
+      X: "x://",
+      x: "x://",
+      roblox: "roblox://",
+      Roblox: "roblox://",
+     }
+    }
+
+    // Get the input field and buttons
+    const inputField = document.getElementById('input-field');
+        const websiteBtn = document.getElementById('website-btn');
+        const appBtn = document.getElementById('app-btn');
+
+        // Add event listeners to the buttons
+        websiteBtn.addEventListener('click', openWebsite);
+        appBtn.addEventListener('click', openApp);
+
+        // Function to open website
+        function openWebsite() {
+            const userInput = prompt("Enter website name (e.g. youtube): ").trim().toLowerCase();
+            const websites = {
+                youtube: "https://www.youtube.com",
+                instagram: "https://www.instagram.com",
+                x: "https://X.com",
+                tiktok: "https://www.tiktok.com",
+                roblox: "https://www.roblox.com",
+                facebook: "https://www.facebook.com",
+                poki: "https://www.poki.com",
+                // Add more websites as needed
+            };
+
+            if (userInput in websites) {
+                window.open(websites[userInput], '_blank');
+            } else {
+                console.log('Invalid website name');
+                // You can add error handling here if needed
+            }
+        }
+
+        // Function to open app
+        function openApp() {
+            const userInput = prompt("Enter app name (e.g. youtube): ").trim().toLowerCase();
+            const apps = {
+                youtube: "youtube://",
+                x: "x://",
+                instagram: "instagram://",
+                facebook: "facebook://",
+                tiktok: "tiktok://",
+                roblox: "roblox://",
+
+            };
+
+            if (userInput in apps) {
+                window.open(apps[userInput], '_blank');
+            } else {
+                console.log('Invalid app name');
+                // You can add error handling here if needed
+            }
+        }
+</script>
 <style>
-  .u {
-    text-decoration: underline;
-  }
-
-  div {
-    display: inline-block;  
-  }
-
-  button {
+body {
+    font-family: Arial, sans-serif;
+}
+#input-field {
+    padding: 10px;
+    font-size: 18px;
+}
+#buttons {
     margin-top: 10px;
-    display: block;
-  }
+}
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
 </style>
 </body>
 </html>
